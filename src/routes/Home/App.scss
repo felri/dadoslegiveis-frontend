@@ -1,0 +1,112 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #3D91FF);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+input {
+  color: #fff !important;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #2d2f33;;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .active {
+  color: #3D91FF;
+}
+
+.navbar-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+  font-size: 23px;
+  span {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  right: 0;
+  font-size: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.right-side span {
+  margin-right: 10px;
+  transition: .2s;
+}
+
+.right-side span:hover {
+  filter: brightness(1.5);
+}

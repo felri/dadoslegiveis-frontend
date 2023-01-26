@@ -1,0 +1,32 @@
+svg {
+  cursor: pointer;
+}
+
+.vertical-line {
+  position: absolute;
+  visibility: invisible;
+  z-index: 19;
+  width: 1px;
+  bottom: 30px;
+  left: 0px;
+  background: transparent;
+}
+
+.tooltip {
+  position: absolute;
+  visibility: invisible;
+  background-color: #1a1a1a;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.vertical-line {
+  visibility: hidden;
+}
+
+.vertical-line.visible {
+  visibility: visible;
+  background: #fff;
+}

@@ -1,0 +1,75 @@
+import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+const BASE_URL = "http://0.0.0.0:5001";
+
+export const getJoyplotData = createAsyncThunk(
+  "joyplot/getData",
+  async (args: { startDate: string; endDate: string; byParty: boolean }) => {
+    const { startDate, endDate, byParty } = args;()
+    const response = await axios.get(`${BASE_URL}/get_joyplot_data`, {
+      params: {
+        start_date: startDate,
+        end_date: endDate,
+        by_party: byParty,
+      },
+    });
+    return response.data;
+  },
+);
+
+
+export const getDetailsData = (
+  date: string,
+  name: string,
+  byParty: boolean
+) => {
+  return axios
+    .get(`${BASE_URL}/get_details_by_name_and_day`, {
+      params: {
+        date,
+        name,
+        by_party: byParty,
+      },
+    })
+    .then(async (response) => await response);
+};
+
+export const getTreemapData = (startDate: string, endDate: string) => {
+  return axios.get(`${BASE_URL}/get_treemap_data`, {
+    params: {
+      start_date: startDate,
+      end_date: endDate,
+    },
+  });
+};
+
+export const getBarplotData = (
+  description: string,
+  startDate: string,
+  endDate: string
+) => {
+  return axios.get(`${BASE_URL}/get_barplot_treemap_block_data`, {
+    params: {
+      description,
+      start_date: startDate,
+      end_date: endDate,
+    },
+  });
+};
+
+export const getListOfExpensesByDeputyData = (
+  description: string,
+  startDate: string,
+  endDate: string,
+  name: string
+) => {
+  return axios.get(`${BASE_URL}/get_list_expenses_by_deputy`, {
+    params: {
+      description,
+      start_date: startDate,
+      end_date: endDate,
+      name,
+    },
+  });
+};

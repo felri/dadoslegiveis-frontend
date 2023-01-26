@@ -1,0 +1,25 @@
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  max-width: 500px;
+}
+
+.calendar-year {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  border: 1px solid #3a3a3a;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.calendar-year:hover {
+  background-color: #3a3a3a;
+}
+
+.selected {
+  background-color: #3a3a3a;
+}
