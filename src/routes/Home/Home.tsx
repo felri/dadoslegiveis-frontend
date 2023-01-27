@@ -23,10 +23,10 @@ const LeftSide = () => {
       <Link to="/" className={` ${pathname === "/" ? "active" : ""}`}>
         <FaHome size={26} />
       </Link>
-      {/* <ExternalLink url={"https://github.com/"}>
+      <ExternalLink url={"https://github.com/felri/dadoslegiveis-frontend"}>
         <FaGithub size={26} />
       </ExternalLink>
-      <ExternalLink url={"https://github.com/"}>
+      {/* <ExternalLink url={"https://github.com/"}>
         <SiAboutdotme size={26} />
       </ExternalLink> */}
     </div>
