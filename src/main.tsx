@@ -13,10 +13,7 @@ import { store } from "./app/store";
 import { Provider } from "react-redux";
 import "./index.css";
 import { createI18n, I18nProvider, useI18n } from "react-simple-i18n";
-import ReactGA from 'react-ga';
 
-// ReactGA.initialize('UA-000000-01');
-// ReactGA.pageview(window.location.pathname + window.location.search);
 
 const router = createBrowserRouter([
   {
