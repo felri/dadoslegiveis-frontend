@@ -1,6 +1,6 @@
 # dadoslegiveis-frontend
 
-[Dados Legiveis](dadoslegiveis.lol/)
+[Dados Legiveis](https://dadoslegiveis.lol/)
 
 ## About The Project
 
