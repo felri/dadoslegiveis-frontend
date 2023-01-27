@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import * as d3 from "d3";
 import { getRandomColor, compareDates, formatAsCurrency } from "@src/app/utils";
-import type { JoyplotData } from "@src/features/joyplot/slice";
+import type { JoyplotData } from "@src/app/types";
 import "./style.css";
 
 interface Props {

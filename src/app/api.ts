@@ -4,7 +4,7 @@ import { formatDate } from "@src/app/utils";
 
 export const api = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://0.0.0.0:5001" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://api.dadoslegiveis.lol" }),
   endpoints: (builder) => ({
     getJoyplotData: builder.query({
       query: (args) => {
