@@ -41,7 +41,6 @@ const TreemapContainer = (): JSX.Element => {
         refetchOnWindowFocus: false,
       }
     );
-      
 
   const total = useCallback(
     (data: number[][]) => {
@@ -88,22 +87,12 @@ const TreemapContainer = (): JSX.Element => {
       <>
         <Title total={total(data)} />
         <TreemapChart data={data} getDetails={getDetails} />
-      </> 
+      </>
     );
   }
 
   return (
-    <div
-      className="App"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100%",
-        width: "100vw",
-      }}
-    >
+    <div className="App container">
       {content}
       <Outlet />
     </div>

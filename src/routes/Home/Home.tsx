@@ -14,7 +14,6 @@ import Block from "@src/components/Block";
 import { Range } from "@src/app/types";
 import "./App.scss";
 
-
 const LeftSide = () => {
   const { pathname } = useLocation();
 
@@ -26,9 +25,6 @@ const LeftSide = () => {
       <ExternalLink url={"https://github.com/felri/dadoslegiveis-frontend"}>
         <FaGithub size={26} />
       </ExternalLink>
-      {/* <ExternalLink url={"https://github.com/"}>
-        <SiAboutdotme size={26} />
-      </ExternalLink> */}
     </div>
   );
 };
@@ -103,25 +99,9 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div
-      className="App"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100%",
-        width: "100vw",
-      }}
-    >
+    <div className="App container">
       <Navbar />
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="base">
         <div>
           {description().map((item) => (
             <Description>{item}</Description>
@@ -134,13 +114,7 @@ const Home: React.FC = () => {
         />
       </div>
       {pathname === "/" && (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <div className="base">
           <Block
             url="joyplot"
             icon={<FaChartBar size={200} />}
