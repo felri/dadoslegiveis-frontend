@@ -125,3 +125,20 @@ nav .active {
   align-items: center;
   justify-content: center;
 }
+
+@media screen {
+  .base {
+    padding-top: 30px;
+    flex-direction: column;
+  }
+
+  .navbar-title {
+    span {
+      display: none;
+      margin: 0;
+    }
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+}
