@@ -103,6 +103,7 @@ body {
   min-height: 100vh;
   align-items: flex-start;
   margin-top: 47px;
+  overflow-x: hidden;
 
 }
 

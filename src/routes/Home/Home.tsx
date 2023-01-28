@@ -12,6 +12,7 @@ import Description from "@src/components/Description";
 import { useEffect } from "react";
 import Block from "@src/components/Block";
 import { Range } from "@src/app/types";
+import MobileWarning from "@src/components/MobileWarning";
 import "./App.scss";
 
 const LeftSide = () => {
@@ -101,6 +102,7 @@ const Home: React.FC = () => {
   return (
     <div className="App container">
       <Navbar />
+      <MobileWarning />
       <div className="base">
         <div>
           {description().map((item) => (

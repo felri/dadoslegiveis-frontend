@@ -1,6 +1,7 @@
 #root {
   margin: 0 auto;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -126,7 +127,7 @@ nav .active {
   justify-content: center;
 }
 
-@media screen {
+@media screen and (max-width: 768px) {
   .base {
     padding-top: 30px;
     flex-direction: column;

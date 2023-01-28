@@ -35,6 +35,10 @@ export default {
       currentMandate: "Current Mandate",
       locale: "en",
     },
+    mobileWarning: {
+      title: "Warning",
+      text: "This website is not optimized for mobile devices. Please use a desktop computer for the best experience.",
+    },
   },
   ptBR: {
     home: {
@@ -72,5 +76,9 @@ export default {
       currentMandate: "Mandato Atual",
       locale: "pt",
     },
+    mobileWarning: {
+      title: "Aviso",
+      text: "Este site não é otimizado para dispositivos móveis. Por favor, use um computador de mesa para uma melhor experiência.",
+    }, 
   },
 };
