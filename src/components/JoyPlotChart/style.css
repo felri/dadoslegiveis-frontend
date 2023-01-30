@@ -5,7 +5,7 @@ svg {
 .vertical-line {
   position: absolute;
   visibility: invisible;
-  z-index: 19;
+  z-index: 2;
   width: 1px;
   bottom: 30px;
   left: 0px;
@@ -29,4 +29,25 @@ svg {
 .vertical-line.visible {
   visibility: visible;
   background: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .vertical-line {
+    visibility: hidden;
+  }
+}
+
+.y-axis {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.x-axis {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.y2-axis {
+  font-size: 13px;
+  font-weight: 500;
 }

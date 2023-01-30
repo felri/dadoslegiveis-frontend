@@ -50,8 +50,8 @@ const Modal = ({
           </button>
         </div>
         <div className="modal-body">
-          {subtitles.map((subtitle) => (
-            <p className="modal-subtitle">{subtitle}</p>
+          {subtitles.map((subtitle, i) => (
+            <p key={i} className="modal-subtitle">{subtitle}</p>
           ))}
           {children}
         </div>

@@ -15,11 +15,12 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .search-icon{
   position: absolute;
-  right: 5px;
+  right: 30px;
   top: 30px;
   border-radius: 5px;
   display: flex;

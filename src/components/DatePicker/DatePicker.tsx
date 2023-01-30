@@ -46,7 +46,7 @@ const DatePicker = ({
     <div className="calendar">
       {years.map(year => (
         <div 
-          key={year} 
+          key={year + "year"} 
           className={`
             calendar-year
             ${year === selectedYear ? "selected" : ""}

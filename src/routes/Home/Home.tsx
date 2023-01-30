@@ -105,8 +105,8 @@ const Home: React.FC = () => {
       <MobileWarning />
       <div className="base">
         <div>
-          {description().map((item) => (
-            <Description>{item}</Description>
+          {description().map((item, i) => (
+            <Description key={i}>{item}</Description>
           ))}
         </div>
         <DatePicker
