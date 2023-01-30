@@ -79,6 +79,7 @@ function JoyplotChart({ data, getDetails }: Props): JSX.Element {
     yScale: d3.ScalePoint<string>,
     y2Scale: d3.ScalePoint<string>
   ) => {
+    // @ts-ignore
     const xAxis = (g) =>
       g
         .attr("transform", `translate(0, 30)`)
@@ -89,20 +90,23 @@ function JoyplotChart({ data, getDetails }: Props): JSX.Element {
             .ticks(chartWidth / 100)
             .tickSizeOuter(0)
         )
+          // @ts-ignore
         .call((g) => g.select(".domain").remove());
-
+    // @ts-ignore
     const yAxis = (g) =>
       g
         .attr("transform", `translate(${ chartWidth - chartMargins.right}, -15)`)
         .attr("class", "y-axis")
         .call(d3.axisRight(yScale).tickSizeOuter(0))
+        // @ts-ignore
         .call((g) => g.select(".domain").remove());
-
+    // @ts-ignore
     const yAxis2 = (g) =>
       g
         .attr("transform", `translate(${chartWidth - chartMargins.right},0)`)
         .attr("class", "y2-axis")
         .call(d3.axisRight(y2Scale).tickSizeOuter(0))
+        // @ts-ignore
         .call((g) => g.select(".domain").remove());
 
     const svg = d3.select(ref.current);
