@@ -118,6 +118,7 @@ function CircularPackingChart({
       .style("fill", (d) => d.color)
       .attr("stroke", "black")
       .style("stroke-width", 2)
+      .attr("class", "deputy-circle")
       .on("mouseover", onMouseOver)
       .on("mouseout", onMouseOut)
       .on("click", onMouseClick);
@@ -203,6 +204,7 @@ function CircularPackingChart({
     }
 
     function onMouseClick(event, d) {
+      setTouchedCenter(false);
       getDetails(d.name);
     }
   };
@@ -236,9 +238,10 @@ function CircularPackingChart({
   }, [touchedOtherCircles, touchedCenter, centerCircleSvg]);
 
   useEffect(() => {
-    handleResize();
+    ref && d3.select(ref.current).selectAll(".deputy-circle").remove();
     setTouched(false);
     setTouchedCenter(false);
+    handleResize();
   }, [data, bigBang]);
 
   useEffect((): (() => void) => {
