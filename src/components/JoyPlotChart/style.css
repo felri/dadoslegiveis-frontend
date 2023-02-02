@@ -1,4 +1,4 @@
-svg {
+#joyplot svg {
   cursor: pointer;
 }
 
@@ -15,11 +15,14 @@ svg {
 .tooltip {
   position: absolute;
   visibility: invisible;
-  background-color: #1a1a1a;
+  display: none;
+  background-color: #1a1a1af7;
   border: solid;
   border-width: 1px;
   border-radius: 5px;
   padding: 10px;
+  font-weight: 800;
+  
 }
 
 .vertical-line {

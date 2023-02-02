@@ -10,7 +10,7 @@ interface Props {
   getDetails?: (date: string, name: string) => void;
 }
 
-function MyJoyplot({ data, getDetails }: Props): JSX.Element {
+function TreemapChart({ data, getDetails }: Props): JSX.Element {
   const ref = useRef<SVGSVGElement>(null);
 
   const init = () => {
@@ -164,4 +164,4 @@ function MyJoyplot({ data, getDetails }: Props): JSX.Element {
   );
 }
 
-export default MyJoyplot;
+export default TreemapChart;

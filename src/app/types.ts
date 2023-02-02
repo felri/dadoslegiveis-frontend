@@ -35,3 +35,10 @@ export interface Range {
   startDate: Date;
   endDate: Date;
 }
+
+export interface CircularPackingData {
+  name: string;
+  group: number;
+  total: number;
+  party: string;
+}

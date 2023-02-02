@@ -72,6 +72,36 @@ export const shortenExpenses = (expense: string) => {
   return shortened;
 };
 
+export const colorsParties = {
+  "AVANTE": "#F74D12",
+  "CIDADANIA": "#24C0AB",
+  "DEMOCRATAS": "#95B558",
+  "MDB": "#F6D009",
+  "NOVO": "#F36B16",
+  "PATRIOTA": "#00A350",
+  "PCdoB": "#DA251C",
+  "PDT": "#1F3779",
+  "PL": "#FFFFFF",
+  "PODE": "#3285C7",
+  "PODEMOS": "#5398D0",
+  "PP": "#68C1EC",
+  "PROGRESSISTAS": "#68C1EC",
+  "PROS": "#F78F22",
+  "PSB": "#FF0E17",
+  "PSC": "#0D7A3A",
+  "PSD": "#70C846",
+  "PSDB": "#0181C5",
+  "PSL": "#FFF200",
+  "PSOL": "#F9D218",
+  "PT": "#E1162C",
+  "PTB": "#FEBA1B",
+  "PV": "#00A652",
+  "REDE": "#E45420",
+  "REPUBLICANOS": "#0EA2C5",
+  "SOLIDARIEDADE": "#E76A1E",
+  "UNIÃO": "#0045A9",
+}
+
 export const getSumAllJoyplot = (data: any[]) => {
   if (data && data.length > 0) {
     return formatAsCurrency(

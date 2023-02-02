@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "@src/components/DatePicker";
 import { Outlet } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
-import { FaTable, FaChartBar, FaHome, FaGithub } from "react-icons/fa";
+import { FaCircle, FaSquare, FaHome, FaGithub, FaMinus } from "react-icons/fa";
 import { SiAboutdotme } from "react-icons/si";
 import ExternalLink from "@src/components/ExternalLink";
 import { useI18n } from "react-simple-i18n";
@@ -48,15 +48,21 @@ const Navbar = () => {
     <nav>
       <Link
         to="joyplot"
-        className={`navbar-title ${pathname === "/joyplot" ? "active" : ""}`}
+        className={`navbar-title ${pathname.includes("joyplot") ? "active" : ""}`}
       >
-        <span>{t("nav.joyplot")}</span> <FaChartBar size={26} />
+        <span>{t("nav.joyplot")}</span> <FaMinus size={26} />
+      </Link>
+      <Link
+        to="circular_packing"
+        className={`navbar-title ${pathname.includes("circular_packing") ? "active" : ""}`}
+      >
+        <span>{t("nav.circular_packing")}</span> <FaCircle size={26} />
       </Link>
       <Link
         to="treemap"
-        className={`navbar-title ${pathname === "/treemap" ? "active" : ""}`}
+        className={`navbar-title ${pathname.includes("treemap") ? "active" : ""}`}
       >
-        <FaTable size={26} /> <span>{t("nav.treemap")}</span>
+        <span>{t("nav.treemap")}</span><FaSquare size={26} /> 
       </Link>
       <RightSide />
       <LeftSide />
@@ -89,11 +95,15 @@ const Home: React.FC = () => {
     if (pathname.includes("/treemap")) {
       return [t("treemap.description")];
     }
+    if (pathname.includes("/circular_packing")) {
+      return [t("circular_packing.description")];
+    }
     if (pathname === "/") {
       return [
         t("home.sectionOne"),
         t("home.sectionTwo"),
         t("home.sectionThree"),
+        t("home.sectionFour"),
       ];
     }
     return [""];
@@ -119,12 +129,17 @@ const Home: React.FC = () => {
         <div className="base">
           <Block
             url="joyplot"
-            icon={<FaChartBar size={200} />}
+            icon={<FaMinus size={200} />}
             title={t("nav.joyplot")}
           />
           <Block
+            url="circular_packing"
+            icon={<FaCircle size={200} />}
+            title={t("nav.circular_packing")}
+          />
+          <Block
             url="treemap"
-            icon={<FaTable size={200} />}
+            icon={<FaSquare size={200} />}
             title={t("nav.treemap")}
           />
         </div>

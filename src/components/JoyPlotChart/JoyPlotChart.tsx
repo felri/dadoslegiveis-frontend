@@ -254,7 +254,7 @@ function JoyplotChart({ data, getDetails }: Props): JSX.Element {
       .attr("d", (d) => area(d.values))
       .on("mouseover", function (d) {
         // Show the tooltip
-        tooltip.style("visibility", "visible");
+        tooltip.style("display", "block");
       })
       .on("mousemove", function (d) {
         let position = d3.pointer(d, window);
@@ -279,7 +279,7 @@ function JoyplotChart({ data, getDetails }: Props): JSX.Element {
       })
       .on("mouseout", function () {
         // Hide the tooltip
-        tooltip.style("visibility", "hidden");
+        tooltip.style("display", "none").style("visibility", "invisible")
       });
     group
       .append("path")

@@ -1,36 +1,55 @@
 // @ts-nocheck
 import { RootState, AppDispatch } from "app/store";
 import { useSelector, useDispatch } from "react-redux";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { formatDate, formatAsCurrency } from "@src/app/utils";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import TreemapChart from "@src/components/TreemapChart";
+import CircularPacking from "@src/components/CircularPackingChart";
 import Loading from "@src/components/Loading";
-import { useGetTreemapDataQuery } from "@src/app/api";
+import { useGetCircularPackingDataQuery } from "@src/app/api";
 import "./styles.scss";
 
 interface Props {
   total: string;
 }
 
-const Title = ({ total }: Props): JSX.Element => {
+const Level = ({ bigBang }): JSX.Element => {
   return (
-    <div className="title-treemap">
-      <h3>Total: {total}</h3>
+    <div className="level">
+      <div className="level__item">
+        Lvl {100 - bigBang}
+      </div>
     </div>
   );
 };
 
-const TreemapContainer = (): JSX.Element => {
+const RangeInput = ({ updateBigBang, value } : { updateBigBang: (value: number) => void }) => {
+  return (
+    <div className="range-input">
+      <input
+        type="range"
+        min="10"
+        max="100"
+        step="1"
+        defaultValue={value}
+        onMouseLeave={(e) => updateBigBang(Number(e.target.value))}
+        onTouchEnd={(e) => updateBigBang(Number(e.target.value))}
+      />
+    </div>
+  )
+}
+
+const CircularPackingContainer = (): JSX.Element => {
   const navigate = useNavigate();
   const firstUpdate = useRef(true);
+  const [bigBang, setBigBang] = useState(31);
   const calendar = useSelector((state: RootState) => state.calendar);
 
   const { startDate, endDate } = calendar;
 
   const { data, isLoading, isError, isSuccess, error, isFetching, refetch } =
-    useGetTreemapDataQuery(
+    useGetCircularPackingDataQuery(
       {
         startDate,
         endDate,
@@ -42,23 +61,12 @@ const TreemapContainer = (): JSX.Element => {
       }
     );
 
-  const total = useCallback(
-    (data: number[][]) => {
-      let total = 0;
-      data.forEach((expense) => {
-        total += expense[1];
-      });
-      return formatAsCurrency(total);
-    },
-    [data]
-  );
-
   const getDetails = (name: string) => {
     const startDateFormatted = formatDate(startDate);
     const endDateFormatted = formatDate(endDate);
     window.scrollTo(0, 0);
     navigate(
-      "/treemap/details/" +
+      "/circular_packing/" +
         name +
         "/" +
         startDateFormatted +
@@ -84,8 +92,9 @@ const TreemapContainer = (): JSX.Element => {
   } else if (isSuccess) {
     content = (
       <>
-        <Title total={total(data)} />
-        <TreemapChart data={data} getDetails={getDetails} />
+        <Level bigBang={bigBang} />
+        <RangeInput updateBigBang={setBigBang} value={bigBang} />
+        <CircularPacking data={data} getDetails={getDetails} bigBang={bigBang}/>
       </>
     );
   }
@@ -98,4 +107,4 @@ const TreemapContainer = (): JSX.Element => {
   );
 };
 
-export default TreemapContainer;
+export default CircularPackingContainer;

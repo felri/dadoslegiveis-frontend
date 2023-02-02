@@ -35,6 +35,20 @@ export const api = createApi({
       query: (args) =>
         `get_list_expenses_by_deputy?description=${args.description}&start_date=${args.startDate}&end_date=${args.endDate}&name=${args.name}`,
     }),
+    getCircularPackingData: builder.query({
+      query: (args) => {
+        let { startDate, endDate } = args;
+        startDate = formatDate(startDate);
+        endDate = formatDate(endDate);
+        return `get_circular_packing_data?start_date=${startDate}&end_date=${endDate}`;
+      }
+    }),
+    getCircularPackingDetails: builder.query({
+      query: (args) => {
+        let { startDate, endDate, name } = args;
+        return `get_circular_packing_details?name=${name}&start_date=${startDate}&end_date=${endDate}`;
+      }
+    }),
   }),
 });
 
@@ -44,4 +58,6 @@ export const {
   useGetTreemapDataQuery,
   useGetBarplotDataQuery,
   useGetDetailsDataBarplotQuery,
+  useGetCircularPackingDataQuery,
+  useGetCircularPackingDetailsQuery,
 } = api;
