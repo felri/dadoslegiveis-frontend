@@ -4,7 +4,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import joyplotVideo from "@src/assets/joyplot.webm";
 import treemapVideo from "@src/assets/treemap.webm";
-import { useNavigate } from "react-router-dom";
+import { useI18n } from "react-simple-i18n";
 import { Navbar } from "@src/routes/Home/Home";
 import "./styles.scss";
 
@@ -117,7 +117,13 @@ const CODE_STRINGS = {
   ],
 };
 
-function About() {
+function About () {
+  const {i18n} = useI18n();
+  const isEnglish = i18n.getLang() === "enUS";
+  return isEnglish ? AboutEnglish() : AboutPortuguese();
+}
+
+function AboutEnglish() {
   return (
     <div className="about">
       <Navbar />
@@ -247,6 +253,117 @@ function About() {
         In conclusion, this project was a fun, month-long endeavor that involved
         a lot of focus. Although there are still some bugs and no tests, I am
         happy with the result.
+      </p>
+    </div>
+  );
+}
+
+
+function AboutPortuguese () {
+  return (
+    <div className="about">
+      <Navbar />
+      <div className="about-title">Sobre</div>
+      <p className="about-paragraph">
+        No site{" "}
+        <ExternalLink url="https://dadosabertos.camara.leg.br/swagger/api.html#staticfile">
+          Dados Abertos Camara dos Deputados
+        </ExternalLink>{" "}
+        há uma API que nos permite acessar informações sobre despesas, leis e
+        outros dados relacionados às ações dos deputados. No entanto, a API
+        geralmente está offline. Como alternativa, eles fornecem um arquivo CSV
+        mal organizado, que é suposto ser atualizado diariamente.
+      </p>
+      <p className="about-paragraph">
+        Inicialmente, eu tinha a intenção de usar a API para criar gráficos com
+        d3, mas devido à instabilidade da API, tive que recorrer ao arquivo CSV.
+        Para fazer isso, eu construí um backend FastAPI e criei um contêiner
+        Docker com PostgreSQL. Adicionei cada despesa anual CSV ao banco de dados
+        usando o comando COPY do psql.
+      </p>
+      <p className="about-paragraph">
+        O{" "}
+        <ExternalLink url="https://dadoslegiveis.lol/joyplot">
+          primeiro gráfico
+        </ExternalLink>{" "}
+        que eu criei foi um gráfico joyplot. Eu transformei os dados em um
+        dataframe onde as colunas eram as datas, o índice era o nome do deputado
+        e cada linha era a quantidade gasta por aquele deputado em cada dia. Eu
+        usei React para o frontend e criei uma solicitação com createApi
+        para lidar com a chamada da API.
+      </p>
+      {CODE_STRINGS["joyplot"].map((code, index) => {
+        return (
+          <SyntaxHighlighter language="javascript" style={monokai}>
+            {code}
+          </SyntaxHighlighter>
+        );
+      })}
+      <p className="about-paragraph">
+        Eu também adicionei a opção de clicar em um deputado para ver os
+        detalhes das despesas.
+      </p>
+
+      <video autoPlay loop muted>
+        <source src={joyplotVideo} type="video/webm" />
+      </video>
+
+      <p className="about-paragraph">
+        O{" "}
+        <ExternalLink url="https://dadoslegiveis.lol/treemap">
+          segundo gráfico
+        </ExternalLink>{" "}
+        que eu criei foi um gráfico de mapa de árvore. Eu transformei os dados
+        em um dataframe onde as colunas eram os nomes dos deputados, o índice era
+        o nome da categoria e cada linha era a quantidade gasta por aquele
+        deputado em cada categoria. Eu usei React para o frontend e criei uma
+        solicitação com createApi para lidar com a chamada da API. Eu também
+        adicionei a opção de clicar em um deputado para ver os detalhes das
+        despesas.
+      </p>
+
+      {CODE_STRINGS["treemap"].map((code, index) => {
+        return (
+          <SyntaxHighlighter language="javascript" style={monokai}>
+            {code}
+          </SyntaxHighlighter>
+        );
+      })}
+      <p className="about-paragraph">
+        Eu também adicionei a opção de clicar em um deputado para ver os
+        detalhes das despesas.
+      </p>
+
+      <video autoPlay loop muted>
+        <source src={treemapVideo} type="video/webm" />
+      </video>
+
+      <p className="about-paragraph">
+        Para o frontend, eu usei o AWS Amplify para implantação contínua a partir
+        de um repositório Github. Para o banco de dados, eu usei uma instância
+        AWS RDS de nível gratuito. Para o backend, criei uma imagem Docker,
+        carreguei-a no AWS ECR, criei um serviço ECS com .25 vCPU e 500 MB.
+      </p>
+
+      <p className="about-paragraph">
+        Embora o desempenho não tenha sido grande no início, pois o banco de
+        dados e o backend estavam sendo executados em VMs de baixo custo, adicionei
+        o Redis para lidar com algumas das consultas pesadas e criei uma instância
+        Elastic Cache para melhorar o desempenho.
+      </p>
+
+      {CODE_STRINGS["cache"].map((code, index) => {
+        return (
+          <SyntaxHighlighter language="python" style={monokai}>
+            {code}
+          </SyntaxHighlighter>
+        );
+      })}
+
+      <p className="about-paragraph">
+        Em conclusão, este projeto foi uma divertida empreitada de um mês que
+        envolveu muita concentração. Embora ainda haja alguns bugs e nenhum teste,
+        estou satisfeito com o resultado.
       </p>
     </div>
   );
