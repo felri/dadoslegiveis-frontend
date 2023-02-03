@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "@src/components/DatePicker";
 import { Outlet } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
-import { FaCircle, FaSquare, FaHome, FaGithub, FaMinus } from "react-icons/fa";
+import { FaCircle, FaSquare, FaHome, FaGithub, FaMinus, FaInfoCircle } from "react-icons/fa";
 import { SiAboutdotme } from "react-icons/si";
 import ExternalLink from "@src/components/ExternalLink";
 import { useI18n } from "react-simple-i18n";
@@ -26,6 +26,9 @@ const LeftSide = () => {
       <ExternalLink url={"https://github.com/felri/dadoslegiveis-frontend"}>
         <FaGithub size={26} />
       </ExternalLink>
+      <Link to="/about" className={` ${pathname === "/about" ? "active" : ""}`}>
+        <FaInfoCircle size={26} />
+      </Link>
     </div>
   );
 };
@@ -40,7 +43,7 @@ const RightSide = () => {
   );
 };
 
-const Navbar = () => {
+export const Navbar = () => {
   const { t } = useI18n();
   const { pathname } = useLocation();
 

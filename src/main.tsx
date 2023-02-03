@@ -5,6 +5,7 @@ import Error404 from "./routes/Error404";
 import Home from "./routes/Home";
 import DetailsJoyplot from "./routes/DetailsJoyplot";
 import DetailsTreemap from "./routes/DetailsTreemap";
+import About from "./routes/About";
 import DetailsBarplot from "./routes/DetailsBarplot";
 import DetailsCircular from "./routes/DetailsCircular";
 import CircularPacking from "./routes/CircularPacking";
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/about",
+    element: <About />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

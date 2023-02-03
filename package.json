@@ -29,6 +29,7 @@
     "react-router-dom": "^6.6.2",
     "react-simple-i18n": "^1.4.0",
     "react-switch": "^7.0.0",
+    "react-syntax-highlighter": "^15.5.0",
     "react-table": "^7.8.0",
     "react-tabs": "^6.0.0",
     "react-use": "^17.4.0",
