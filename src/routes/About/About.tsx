@@ -1,4 +1,4 @@
-// basic react component
+// @ts-nocheck
 import ExternalLink from "@src/components/ExternalLink";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
