@@ -153,7 +153,7 @@ function AboutEnglish() {
         I created was a joyplot chart. I transformed the data into a dataframe
         where the columns were the dates, the index was the deputy's name, and
         each row was the amount spent by that deputy on each day. I used React
-        for the frontend and created a request with create-react-app to handle
+        for the frontend and created a request with createApi from Redux Toolkit to handle
         the API call.
       </p>
       {CODE_STRINGS["joyplot"].map((code, index) => {
