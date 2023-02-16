@@ -141,4 +141,19 @@ nav .active {
     justify-content: center;
     min-width: 0;
   }
+
+  .top-section {
+    flex-direction: column;
+  }
 }
+
+.top-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top-section-home {
+  flex-direction: column !important;
+}
+

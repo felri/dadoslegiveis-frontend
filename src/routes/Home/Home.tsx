@@ -4,15 +4,22 @@ import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "@src/components/DatePicker";
 import { Outlet } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
-import { FaCircle, FaSquare, FaHome, FaGithub, FaMinus, FaInfoCircle } from "react-icons/fa";
-import { SiAboutdotme } from "react-icons/si";
+import {
+  FaCircle,
+  FaSquare,
+  FaHome,
+  FaGithub,
+  FaMinus,
+  FaInfoCircle,
+} from "react-icons/fa";
 import ExternalLink from "@src/components/ExternalLink";
 import { useI18n } from "react-simple-i18n";
 import Description from "@src/components/Description";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Block from "@src/components/Block";
 import { Range } from "@src/app/types";
 import MobileWarning from "@src/components/MobileWarning";
+import CanvasWrapper from "@src/components/CanvasWrapper";
 import "./App.scss";
 
 const LeftSide = () => {
@@ -51,21 +58,28 @@ export const Navbar = () => {
     <nav>
       <Link
         to="joyplot"
-        className={`navbar-title ${pathname.includes("joyplot") ? "active" : ""}`}
+        className={`navbar-title ${
+          pathname.includes("joyplot") ? "active" : ""
+        }`}
       >
         <span>{t("nav.joyplot")}</span> <FaMinus size={26} />
       </Link>
       <Link
         to="circular_packing"
-        className={`navbar-title ${pathname.includes("circular_packing") ? "active" : ""}`}
+        className={`navbar-title ${
+          pathname.includes("circular_packing") ? "active" : ""
+        }`}
       >
         <span>{t("nav.circular_packing")}</span> <FaCircle size={26} />
       </Link>
       <Link
         to="treemap"
-        className={`navbar-title ${pathname.includes("treemap") ? "active" : ""}`}
+        className={`navbar-title ${
+          pathname.includes("treemap") ? "active" : ""
+        }`}
       >
-        <span>{t("nav.treemap")}</span><FaSquare size={26} /> 
+        <span>{t("nav.treemap")}</span>
+        <FaSquare size={26} />
       </Link>
       <RightSide />
       <LeftSide />
@@ -74,6 +88,7 @@ export const Navbar = () => {
 };
 
 const Home: React.FC = () => {
+  const viewRef = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
   const { t, i18n } = useI18n();
   const dispatch: AppDispatch = useDispatch();
@@ -113,38 +128,45 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="App container">
+    <div className="App container" ref={viewRef}>
       <Navbar />
       <MobileWarning />
       <div className="base">
-        <div>
-          {description().map((item, i) => (
-            <Description key={i}>{item}</Description>
-          ))}
+        <div
+          className={`top-section ${
+            pathname === "/" ? "top-section-home" : ""
+          }`}
+        >
+          <div>
+            {description().map((item, i) => (
+              <Description key={i}>{item}</Description>
+            ))}
+          </div>
+          <DatePicker
+            startDate={startDate}
+            endDate={endDate}
+            handleChange={handleFetchJoyplot}
+          />
         </div>
-        <DatePicker
-          startDate={startDate}
-          endDate={endDate}
-          handleChange={handleFetchJoyplot}
-        />
+        <CanvasWrapper viewRef={viewRef} />
       </div>
       {pathname === "/" && (
         <div className="base">
-          <Block
+          {/* <Block
             url="joyplot"
-            icon={<FaMinus size={200} />}
+            // icon={<FaMinus size={200} />}
             title={t("nav.joyplot")}
           />
           <Block
             url="circular_packing"
-            icon={<FaCircle size={200} />}
+            // icon={<FaCircle size={200} />}
             title={t("nav.circular_packing")}
           />
           <Block
             url="treemap"
-            icon={<FaSquare size={200} />}
+            // icon={<FaSquare size={200} />}
             title={t("nav.treemap")}
-          />
+          /> */}
         </div>
       )}
 
