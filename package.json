@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/three": "^9.6.1",
+    "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.56.24",
     "@react-three/fiber": "^8.11.0",
     "@react-three/postprocessing": "^2.7.0",
@@ -40,7 +42,8 @@
     "react-tabs": "^6.0.0",
     "react-use": "^17.4.0",
     "sort-by": "^1.2.0",
-    "three": "0.148.0"
+    "three": "0.148.0",
+    "three-stdlib": "^2.21.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

@@ -13,6 +13,7 @@ export default function Lights({ targetRef }: Props): JSX.Element {
   useThree(({ gl }) => {
     gl.shadowMap.enabled = true;
     gl.shadowMap.type = THREE.PCFSoftShadowMap;
+    
 
     if (rectAreaLightRef?.current && targetRef?.current) {
       rectAreaLightRef.current.target = targetRef.current;
@@ -25,13 +26,7 @@ export default function Lights({ targetRef }: Props): JSX.Element {
         castShadow
         position={[10, 2, 6]}
         intensity={0.2}
-        ref={directionalLightRef}
       />
-      {
-        directionalLightRef.current && (
-          <directionalLightHelper args={[directionalLightRef.current, 1]} />
-        )
-      }
       <rectAreaLight
         ref={rectAreaLightRef}
         position={[-10, 1, -16]}

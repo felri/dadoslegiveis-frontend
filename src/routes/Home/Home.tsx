@@ -131,6 +131,25 @@ const Home: React.FC = () => {
     <div className="App container" ref={viewRef}>
       <Navbar />
       <MobileWarning />
+      {pathname === "/" && (
+        <div className="base">
+          <Block
+            url="joyplot"
+            icon={<FaMinus size={50} />}
+            title={t("nav.joyplot")}
+          />
+          <Block
+            url="circular_packing"
+            icon={<FaCircle size={50} />}
+            title={t("nav.circular_packing")}
+          />
+          <Block
+            url="treemap"
+            icon={<FaSquare size={50} />}
+            title={t("nav.treemap")}
+          />
+        </div>
+      )}
       <div className="base">
         <div
           className={`top-section ${
@@ -150,26 +169,6 @@ const Home: React.FC = () => {
         </div>
         <CanvasWrapper viewRef={viewRef} />
       </div>
-      {pathname === "/" && (
-        <div className="base">
-          {/* <Block
-            url="joyplot"
-            // icon={<FaMinus size={200} />}
-            title={t("nav.joyplot")}
-          />
-          <Block
-            url="circular_packing"
-            // icon={<FaCircle size={200} />}
-            title={t("nav.circular_packing")}
-          />
-          <Block
-            url="treemap"
-            // icon={<FaSquare size={200} />}
-            title={t("nav.treemap")}
-          /> */}
-        </div>
-      )}
-
       <Outlet />
     </div>
   );

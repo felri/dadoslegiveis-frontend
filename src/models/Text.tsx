@@ -9,14 +9,15 @@ interface Props {
   text: string;
   position?: [number, number, number];
   rotation?: [number, number, number];
-  scale?: number;
+  size?: number;
+  hovered?: boolean;
+  color?: string;
 }
 
 const AnimatedText = animated(Text3D);
 
-export default function Text({ text, ...props }: Props): JSX.Element {
+export default function Text({ text, hovered, color, ...props }: Props): JSX.Element {
   const mesh = useRef<any>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   const config = useMemo(
     () => ({
@@ -26,23 +27,12 @@ export default function Text({ text, ...props }: Props): JSX.Element {
   );
 
   const spring = useSpring({
-    scale: isHovered ? 1 : 0.8,
-  });
-
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime();
-
-    if (mesh.current) {
-      mesh.current.rotation.x = time * 0.2;
-      mesh.current.rotation.y = time * 0.2;
-    }
+    scale: hovered ? .8 : 0.7,
   });
 
   return (
     <>
       <mesh
-        // onPointerEnter={() => setIsHovered(true)}
-        // onPointerLeave={() => setIsHovered(false)}
         position={[2, 2, 2]}
         ref={mesh}
       >
@@ -50,25 +40,26 @@ export default function Text({ text, ...props }: Props): JSX.Element {
           args={[1, 1]} 
           attach="geometry"
         />
-        <meshBasicMaterial
+        <meshToonMaterial
           attach="material"
-          color="red"
           transparent
           opacity={0}
         />
       </mesh>
 
-      {/* <AnimatedText
+      <AnimatedText
         ref={mesh}
         font={config.font}
         letterSpacing={0.1}
-        // onPointerEnter={() => setIsHovered(true)}
-        // onPointerLeave={() => setIsHovered(false)}
         {...props}
         {...spring}
       >
         {text}
-      </AnimatedText> */}
+        <meshToonMaterial
+          attach="material"
+          color={color || "#fff"}
+        />
+      </AnimatedText>
     </>
   );
 }
