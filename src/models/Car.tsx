@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 
 export default function Model(): JSX.Element {
   const meshRef = useRef<any>(null);
+  // @ts-ignore
   const { nodes, animations } = useGLTF("./car.glb");
   const { mixer, clips } = useAnimations(animations);
 

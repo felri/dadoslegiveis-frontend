@@ -126,9 +126,23 @@ nav .active {
   justify-content: center;
 }
 
+
+.top-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.top-section-home {
+  flex-direction: column !important;
+}
+
+
 @media screen and (max-width: 768px) {
   .base {
     padding-top: 30px;
+    align-items: center;
     flex-direction: column;
   }
 
@@ -145,15 +159,11 @@ nav .active {
   .top-section {
     flex-direction: column;
   }
+
+  .top-section-home {
+    box-sizing: border-box;
+    padding: 0 180px;
+  }
 }
 
-.top-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.top-section-home {
-  flex-direction: column !important;
-}
 

@@ -34,8 +34,11 @@ export default function Camera({ viewRef }: Props): JSX.Element {
   useFrame(({ clock, camera }) => {
     const time = clock.getElapsedTime();
 
-    const correctMouseX = mouse.x - viewRef.current?.offsetWidth / 2;
-    const correctMouseY = mouse.y - viewRef.current?.offsetHeight / 2;
+    const offsetWidth = viewRef?.current?.offsetWidth || 0;
+    const offsetHeight = viewRef?.current?.offsetHeight || 0;
+
+    const correctMouseX = mouse.x - offsetWidth / 2;
+    const correctMouseY = mouse.y - offsetHeight / 2;
 
     const x = correctMouseX * 0.02;
     const y = correctMouseY * 0.02;

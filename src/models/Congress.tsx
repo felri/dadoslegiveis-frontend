@@ -8,8 +8,8 @@ import { useMemo, useRef } from "react";
 import { Geometry } from "three-stdlib";
 
 const CannonGeometry = () => {
-  const argsBox = [12, 1.6, 4]
-  const argsCylinder = [2, 1, 2]
+  const argsBox: [number, number, number] = [12, 1.6, 4]
+  const argsCylinder: [number, number, number] = [2, 1, 2]
   const [ref1] = useBox(() => ({
     mass: 0,
     args: argsBox,
@@ -23,10 +23,12 @@ const CannonGeometry = () => {
 
   return (
     <>
+      {/* @ts-ignore */}
       <mesh ref={ref1}>
         <boxGeometry args={argsBox}/>
         <meshBasicMaterial visible={false} />
       </mesh>
+      {/* @ts-ignore */}
       <mesh ref={ref2}>
         <cylinderGeometry args={argsCylinder} />
         <meshBasicMaterial visible={false} />
@@ -36,7 +38,7 @@ const CannonGeometry = () => {
 };
 
 function Plane () {
-  const args = [10, 10]
+  const args: [number, number] = [10, 10]
   const [ref] = usePlane(() => ({
     args,
     mass: 0,
@@ -45,6 +47,7 @@ function Plane () {
   }));
 
   return (
+    // @ts-ignore
     <mesh ref={ref}>
       <planeGeometry args={args} />
       <meshBasicMaterial visible={false} />
@@ -53,6 +56,7 @@ function Plane () {
 }
 
 export default function Model(): JSX.Element {
+  // @ts-ignore
   const { nodes } = useGLTF("./congresso-v2.glb");
 
   const bakedTexture = useTexture("./congresso-baked.jpg");

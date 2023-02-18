@@ -167,7 +167,7 @@ const Home: React.FC = () => {
             handleChange={handleFetchJoyplot}
           />
         </div>
-        <CanvasWrapper viewRef={viewRef} />
+        {pathname === "/" && <CanvasWrapper viewRef={viewRef} />}
       </div>
       <Outlet />
     </div>

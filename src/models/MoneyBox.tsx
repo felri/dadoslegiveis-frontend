@@ -20,6 +20,7 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
   const directionalLightRef = useRef<any>(null);
   const bottomRef = useRef<any>(null);
   const [isHovered, setIsHovered] = useState(false);
+  // @ts-ignore
   const { nodes } = useGLTF("./moneyBox.glb");
 
   const handleBoxClick = () => {
@@ -95,6 +96,7 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
           hovered={isHovered}
           color={"#00b500"}
         />
+        {/* @ts-ignore */}
         <a.meshToonMaterial color={spring.color} />
       </a.mesh>
       <a.mesh
@@ -102,6 +104,7 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
         geometry={nodes.moneyBox.geometry}
         position={[1.83, -0.4, 10.3]}
         scale={spring.scale}
+        // @ts-ignore
         rotation={rotation}
       >
         <a.meshToonMaterial color={spring.color} side={THREE.DoubleSide} />

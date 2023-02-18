@@ -8,9 +8,45 @@ interface CanvasProps {
   viewRef: React.RefObject<HTMLDivElement>;
 }
 
+const ButtonScrollTop = ({viewRef}: CanvasProps): JSX.Element => {
+  const [showButton, setShowButton] = React.useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 800) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  }, []);
+
+  const handleClick = () => {
+    viewRef.current?.scrollIntoView({ behavior: "smooth" });
+
+  };
+
+  return (
+    <div className={`scroll-top-button  ${showButton ? "show" : ""}`} onClick={handleClick}>
+      <span>^</span>
+    </div>
+  );
+};
+
+
 const CanvasWrapper = ({viewRef}: CanvasProps): JSX.Element => {
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
   return (
     <div className="canvas-container">
+      {
+        isMobile && (
+          <ButtonScrollTop viewRef={viewRef}/>
+        )
+      }
       <Canvas 
         shadows
         gl={{
