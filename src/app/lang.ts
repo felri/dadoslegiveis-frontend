@@ -4,9 +4,9 @@ export default {
       sectionOne:
         "This project helps you understand how Brazilian deputies are spending public money. We have three charts that show the data in different ways.",
       sectionTwo:
-        "The LINE chart displays expenses over time",
+        "The LINE chart displays expenses over time.",
       sectionThree:
-        "The CIRCLE chart displays the deputies in circles, and the size of the circle represents the amount of money spent.",
+        "The CIRCLE chart displays the deputies as circles, and the size of the circle represents the amount of money spent.",
       sectionFour:
         "The SQUARE chart highlights the biggest expenses.",
       sectionFive:
