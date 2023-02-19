@@ -122,6 +122,7 @@ const Home: React.FC = () => {
         t("home.sectionTwo"),
         t("home.sectionThree"),
         t("home.sectionFour"),
+        t("home.sectionFive"),
       ];
     }
     return [""];

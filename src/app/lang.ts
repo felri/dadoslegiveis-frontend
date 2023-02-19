@@ -2,13 +2,15 @@ export default {
   enUS: {
     home: {
       sectionOne:
-        "This project aims to give you a better understanding of how your money is being spent by the deputies in Brazil.",
+        "This project helps you understand how Brazilian deputies are spending public money. We have three charts that show the data in different ways.",
       sectionTwo:
-        "The LINE chart provides a visual representation of the expenses of each deputy.",
+        "The LINE chart displays expenses over time",
       sectionThree:
-        "The CIRCLE chart displays the data in a circles, making it easy to understand the distribution of expenses by deputies.",
+        "The CIRCLE chart displays the deputies in circles, and the size of the circle represents the amount of money spent.",
       sectionFour:
-        "Finally, the SQUARE chart highlights the most expensive categories, giving you a quick overview of the biggest expenses. All the data is gathered from the Dados Abertos goverment website.",
+        "The SQUARE chart highlights the biggest expenses.",
+      sectionFive:
+        "All charts are interactive, so you can click on them to see details. Data is sourced from the Dados Abertos government website."
     },
     joyplot: {
       description:
@@ -20,7 +22,7 @@ export default {
     },
     circular_packing: {
       description:
-        "The chart represents the expenses of each deputy and the balls represent the size of their expenses. Your mission is to bring your mouse cursor to the center of the chart without touching the deputies' balls. Touching one of the balls means you have lost, so be careful and precise with your movements.",
+        "The chart represents the expenses of each deputy and the circles represent the size of their expenses. Your mission is to bring your mouse cursor to the center of the chart without touching the deputies' circles. You can change the level in the slider below, and you can click in any circle to get more details about the deputy's expenses.",
     },
     nav: {
       joyplot: "Line",
@@ -57,13 +59,15 @@ export default {
   ptBR: {
     home: {
       sectionOne:
-        "Este projeto tem como objetivo fornecer uma melhor compreensão de como o dinheiro é gasto pelos deputados brasileiros. Ele apresenta três tipos de gráficos, cada um fornecendo uma maneira única e interativa de visualizar os dados.",
+        "Este projeto ajuda você a entender como os deputados brasileiros estão gastando dinheiro público. Temos três gráficos que mostram os dados de diferentes maneiras.",
       sectionTwo:
-        "O gráfico de LINHA é um joyplot que fornece uma representação visual das despesas de cada deputado ao longo do tempo.",
+        "O gráfico de LINHA exibe as despesas ao longo do tempo",
       sectionThree:
-        "O gráfico de CÍRCULO exibe os dados em um formato de embalagem circular, tornando fácil entender a distribuição das despesas.",
+        "O gráfico de CÍRCULO exibe os deputados em círculos, e o tamanho do círculo representa a quantidade de dinheiro gasto.",
       sectionFour:
-        "Por fim, o gráfico de QUADRADO é um treemap que destaca as categorias mais caras, fornecendo uma visão geral rápida das maiores despesas. Todos os dados são coletados do site Dados Abertos, tornando-os confiáveis e atualizados. Então, divirta-se explorando as despesas dos deputados brasileiros.",
+        "O gráfico de QUADRADO destaca as maiores despesas.",
+      sectionFive:
+        "Todos os gráficos são interativos, então você pode clicar neles para ver detalhes. Os dados são obtidos do site do governo Dados Abertos.",
     },
     joyplot: {
       description:
