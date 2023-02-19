@@ -2,25 +2,25 @@ export default {
   enUS: {
     home: {
       sectionOne:
-        "This project aims to give you a better understanding of how your money is being spent by the deputies in Brazil. It showcases three types of charts, each providing a unique and interactive way to view the data.",
+        "This project aims to give you a better understanding of how your money is being spent by the deputies in Brazil.",
       sectionTwo:
-        "The LINE chart is a joyplot that provides a visual representation of the expenses of each deputy over time.",
+        "The LINE chart provides a visual representation of the expenses of each deputy.",
       sectionThree:
-        "The CIRCLE chart displays the data in a circular packing format, making it easy to understand the distribution of expenses.",
+        "The CIRCLE chart displays the data in a circles, making it easy to understand the distribution of expenses by deputies.",
       sectionFour:
-        "Finally, the SQUARE chart is a treemap that highlights the most expensive categories, giving you a quick overview of the biggest expenses. All the data is gathered from the Dados Abertos website, making it reliable and up-to-date. So, have fun exploring the expenses of the Brazilian deputies.",
+        "Finally, the SQUARE chart highlights the most expensive categories, giving you a quick overview of the biggest expenses. All the data is gathered from the Dados Abertos goverment website.",
     },
     joyplot: {
       description:
-        "The chart is represented in a line format, with each line representing the expenses of an individual deputy. This page provides a clear and straightforward representation of the spending habits of each deputy over a period of time.",
+        "The chart is represented in a line format, with each line representing the expenses of an individual deputy. Click on a point to see the expenses of that deputy on that day.",
     },
     treemap: {
       description:
-        "The chart uses different sizes and colors to represent the categories and the amount of money spent in each category. This page provides a visual representation of the expenses, making it easy to understand the distribution of spending across different categories.",
+        "The chart uses different sizes and colors to represent the categories and the amount of money spent in each category. Click on a category to see the expenses of each deputy.",
     },
     circular_packing: {
       description:
-        "Your mission is to bring your mouse cursor to the center of the chart without touching the deputies' balls. The chart represents the expenses of each deputy and the balls represent their respective expenses. Touching one of the balls means you have lost, so be careful and precise with your movements.",
+        "The chart represents the expenses of each deputy and the balls represent the size of their expenses. Your mission is to bring your mouse cursor to the center of the chart without touching the deputies' balls. Touching one of the balls means you have lost, so be careful and precise with your movements.",
     },
     nav: {
       joyplot: "Line",
@@ -47,7 +47,7 @@ export default {
     },
     mobileWarning: {
       title: "Warning",
-      text: "This website is not optimized for mobile devices. Please use a desktop computer for the best experience.",
+      text: "This website uses charts and tables to display the data and is not optimized for mobile devices. Please use a desktop computer for the best experience.",
     },
     moneyBox: {
       first: "Real-time spending",
