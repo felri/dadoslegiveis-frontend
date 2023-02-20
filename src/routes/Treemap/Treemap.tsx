@@ -58,7 +58,7 @@ const TreemapContainer = (): JSX.Element => {
     const endDateFormatted = formatDate(endDate);
     window.scrollTo(0, 0);
     navigate(
-      "/treemap/details/" +
+      "/square/details/" +
         name +
         "/" +
         startDateFormatted +

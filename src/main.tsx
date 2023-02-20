@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "treemap/",
+        path: "square/",
         element: <Treemap />,
         children: [
           {

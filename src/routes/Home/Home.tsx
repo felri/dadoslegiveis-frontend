@@ -74,9 +74,9 @@ export const Navbar = () => {
         <span>{t("nav.circular_packing")}</span> <FaCircle size={26} />
       </Link>
       <Link
-        to="/treemap"
+        to="/square"
         className={`navbar-title ${
-          pathname.includes("treemap") ? "active" : ""
+          pathname.includes("square") ? "active" : ""
         }`}
       >
         <span>{t("nav.treemap")}</span>
@@ -120,7 +120,7 @@ const Home: React.FC = () => {
     if (pathname.includes("/joyplot")) {
       return [t("joyplot.description")];
     }
-    if (pathname.includes("/treemap")) {
+    if (pathname.includes("/square")) {
       return [t("treemap.description")];
     }
     if (pathname.includes("/circular_packing")) {
@@ -159,7 +159,7 @@ const Home: React.FC = () => {
             title={t("nav.circular_packing")}
           />
           <Block
-            url="treemap"
+            url="square"
             icon={<FaSquare size={50} />}
             title={t("nav.treemap")}
           />

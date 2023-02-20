@@ -174,7 +174,7 @@ function AboutEnglish() {
 
       <p className="about-paragraph">
         The{" "}
-        <ExternalLink url="https://dadoslegiveis.lol/treemap">
+        <ExternalLink url="https://dadoslegiveis.lol/square">
           second graph
         </ExternalLink>{" "}
         was a simple treemap that displays each expense as a block. I also added
@@ -310,7 +310,7 @@ function AboutPortuguese () {
 
       <p className="about-paragraph">
         O{" "}
-        <ExternalLink url="https://dadoslegiveis.lol/treemap">
+        <ExternalLink url="https://dadoslegiveis.lol/square">
           segundo gráfico
         </ExternalLink>{" "}
         que eu criei foi um gráfico de mapa de árvore. Eu transformei os dados

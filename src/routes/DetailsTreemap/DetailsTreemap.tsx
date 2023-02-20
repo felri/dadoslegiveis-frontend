@@ -49,7 +49,7 @@ const DetailsTreemap = (): JSX.Element => {
   return (
     <Modal
       titles={[<div>{description}</div>]}
-      previousRoute="/treemap"
+      previousRoute="/square"
       subtitles={[
         `${formatDateBrazil(startDate)} - ${formatDateBrazil(endDate)}`,
       ]}
