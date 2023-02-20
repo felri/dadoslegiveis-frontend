@@ -46,7 +46,8 @@ const CanvasWrapper = ({viewRef}: CanvasProps): JSX.Element => {
           <ButtonScrollTop viewRef={viewRef}/>
         )
       }
-      <Canvas 
+      <Canvas
+        // @ts-ignore
         enablePan={false}
         shadows
         gl={{

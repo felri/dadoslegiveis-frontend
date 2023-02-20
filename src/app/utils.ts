@@ -8,7 +8,7 @@ export const formatDate = (date: Date) => {
   return `${year}-${month}-${day}`;
 };
 
-export const formatDateBrazil = (date: string | undefined): string => {
+export const formatDateBrazil = (date: string | Date | undefined): string => {
   // format obj date to DD/MM/YYYY
   if (!date) return "Data não informada";
   const dateObj = new Date(date);

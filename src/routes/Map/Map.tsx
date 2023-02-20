@@ -66,6 +66,7 @@ const Map = (): JSX.Element => {
     const cleanData = {};
     Object.keys(data).forEach((key) => {
       if (key !== "null") {
+        // @ts-ignore
         cleanData[key] = data[key];
       }
     });
@@ -81,6 +82,7 @@ const Map = (): JSX.Element => {
       {
         refetchOnMountOrArgChange: false,
         refetchOnReconnect: false,
+        // @ts-ignore
         refetchOnWindowFocus: false,
       }
     );
@@ -110,6 +112,7 @@ const Map = (): JSX.Element => {
   if (isLoading || isFetching) {
     content = <Loading />;
   } else if (isError) {
+    // @ts-ignore
     content = <p>Error: {error}</p>;
   } else if (isSuccess) {
     content = (
@@ -127,12 +130,15 @@ const Map = (): JSX.Element => {
         </div>
       );
     } else if (result.isError) {
+      // @ts-ignore
       return <p>Error: {result.error}</p>;
     } else if (result.isSuccess && isDetailsOpen) {
       return (
         <Details
           data={result.data}
+          // @ts-ignore
           name={selectedUf}
+          // @ts-ignore
           total={data[selectedUf].expense}
           close={() => setIsDetailsOpen(false)}
         />
