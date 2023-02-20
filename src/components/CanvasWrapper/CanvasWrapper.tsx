@@ -36,7 +36,6 @@ const ButtonScrollTop = ({viewRef}: CanvasProps): JSX.Element => {
   );
 };
 
-
 const CanvasWrapper = ({viewRef}: CanvasProps): JSX.Element => {
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -48,6 +47,7 @@ const CanvasWrapper = ({viewRef}: CanvasProps): JSX.Element => {
         )
       }
       <Canvas 
+        enablePan={false}
         shadows
         gl={{
           antialias: true,
@@ -57,7 +57,7 @@ const CanvasWrapper = ({viewRef}: CanvasProps): JSX.Element => {
             fov: 55,
             near: 0.1,
             far: 200,
-            position: [ 1, 7, 25 ],
+            position: [ 7, 10, 25 ],
         } }
       >
         <Suspense>

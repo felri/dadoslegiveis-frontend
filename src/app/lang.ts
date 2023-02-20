@@ -10,6 +10,8 @@ export default {
       sectionFour:
         "The SQUARE chart highlights the biggest expenses.",
       sectionFive:
+        "The MAP chart shows the expenses of each state, you can click on a state to see the expenses by category.",
+      sectionSix:
         "All charts are interactive, so you can click on them to see details. Data is sourced from the Dados Abertos government website."
     },
     joyplot: {
@@ -24,10 +26,15 @@ export default {
       description:
         "The chart represents the expenses of each deputy and the circles represent the size of their expenses. Your mission is to bring your mouse cursor to the center of the chart without touching the deputies' circles. You can change the level in the slider below, and you can click in any circle to get more details about the deputy's expenses.",
     },
+    map: {
+      description:
+        "The map shows the expenses of each state, you can click on a state to see the expenses by category.",
+    },
     nav: {
       joyplot: "Line",
       treemap: "Square",
       circular_packing: "Circle",
+      map: "Map",
     },
     switch: {
       deputy: "by Deputy",
@@ -67,6 +74,8 @@ export default {
       sectionFour:
         "O gráfico de QUADRADO destaca as maiores despesas.",
       sectionFive:
+        "O gráfico de MAPA mostra as despesas de cada estado, você pode clicar em um estado para ver as despesas por categoria.",
+      sectionSix:
         "Todos os gráficos são interativos, então você pode clicar neles para ver detalhes. Os dados são obtidos do site do governo Dados Abertos.",
     },
     joyplot: {
@@ -81,10 +90,15 @@ export default {
       description:
         "Sua missão é levar o cursor do mouse para o centro do gráfico sem tocar nas bolas dos deputados. O gráfico representa as despesas de cada deputado e as bolas representam suas respectivas despesas. Tocar em uma das bolas significa que você perdeu, então tenha cuidado e precisão com seus movimentos.",
     },
+    map: {
+      description:
+        "O mapa mostra as despesas de cada estado, você pode clicar em um estado para ver as despesas por categoria.",
+    },
     nav: {
       joyplot: "Linha",
       treemap: "Quadrado",
       circular_packing: "Círculo",
+      map: "Mapa",
     },
     switch: {
       deputy: "por Deputado",

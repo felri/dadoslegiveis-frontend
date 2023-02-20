@@ -49,6 +49,24 @@ export const api = createApi({
         return `get_circular_packing_details?name=${name}&start_date=${startDate}&end_date=${endDate}`;
       }
     }),
+    getMapData: builder.query({
+      query: (args) => {
+        let { startDate, endDate } = args;
+        startDate = formatDate(startDate);
+        endDate = formatDate(endDate);
+        return `get_map_data?start_date=${startDate}&end_date=${endDate}`;
+      },
+      keepUnusedDataFor: 5000,
+    }),
+    getMapDetails: builder.query({
+      query: (args) => {
+        let { startDate, endDate, uf } = args;
+        startDate = formatDate(startDate);
+        endDate = formatDate(endDate);
+        return `get_map_details?start_date=${startDate}&end_date=${endDate}&uf=${uf}`;
+      },
+      keepUnusedDataFor: 5000,
+    }),
   }),
 });
 
@@ -60,4 +78,7 @@ export const {
   useGetDetailsDataBarplotQuery,
   useGetCircularPackingDataQuery,
   useGetCircularPackingDetailsQuery,
+  useGetMapDataQuery,
+  useGetMapDetailsQuery,
+  useLazyGetMapDetailsQuery,
 } = api;

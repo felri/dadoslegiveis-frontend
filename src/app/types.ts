@@ -42,3 +42,18 @@ export interface CircularPackingData {
   total: number;
   party: string;
 }
+
+export interface MapData {
+  expense: number;
+  normalized_expense: number;
+}
+
+export interface MapDataObject {
+  [key: string]: MapData;
+}
+
+export interface MapState {
+  data: MapData | null;
+  error: string | null;
+  loading: boolean;
+}

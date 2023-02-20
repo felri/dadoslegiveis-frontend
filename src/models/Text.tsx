@@ -40,7 +40,7 @@ export default function Text({ text, hovered, color, ...props }: Props): JSX.Ele
           args={[1, 1]} 
           attach="geometry"
         />
-        <meshToonMaterial
+        <meshStandardMaterial
           attach="material"
           transparent
           opacity={0}
@@ -55,7 +55,7 @@ export default function Text({ text, hovered, color, ...props }: Props): JSX.Ele
         {...spring}
       >
         {text}
-        <meshToonMaterial
+        <meshStandardMaterial
           attach="material"
           color={color || "#fff"}
         />

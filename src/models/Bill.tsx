@@ -11,7 +11,7 @@ import { useBox, useTrimesh } from "@react-three/cannon";
 import type { InstancedMesh, Mesh, Color } from "three";
 
 const Boxes = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const args: Triplet = [0.05, 0.1, 0.2];
   const number = 80;
 

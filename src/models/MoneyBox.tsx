@@ -48,7 +48,6 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
     gl.shadowMap.enabled = true;
     gl.shadowMap.type = THREE.PCFSoftShadowMap;
     
-
     if (directionalLightRef?.current) {
       directionalLightRef.current.target = bottomRef.current;
     }
@@ -97,7 +96,7 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
           color={"#00b500"}
         />
         {/* @ts-ignore */}
-        <a.meshToonMaterial color={spring.color} />
+        <a.meshStandardMaterial color={spring.color} />
       </a.mesh>
       <a.mesh
         ref={bottomRef}
@@ -107,7 +106,7 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
         // @ts-ignore
         rotation={rotation}
       >
-        <a.meshToonMaterial color={spring.color} side={THREE.DoubleSide} />
+        <a.meshStandardMaterial color={spring.color} side={THREE.DoubleSide} />
       </a.mesh>
     </group>
   );

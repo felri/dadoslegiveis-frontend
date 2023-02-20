@@ -7,6 +7,7 @@ import DetailsJoyplot from "./routes/DetailsJoyplot";
 import DetailsTreemap from "./routes/DetailsTreemap";
 import About from "./routes/About";
 import DetailsBarplot from "./routes/DetailsBarplot";
+import Map from "./routes/Map";
 import DetailsCircular from "./routes/DetailsCircular";
 import CircularPacking from "./routes/CircularPacking";
 import Joyplot from "./routes/Joyplot";
@@ -61,6 +62,12 @@ const router = createBrowserRouter([
             element: <DetailsCircular />,
           },
         ],
+      },
+      {
+        path: "map/",
+        element: <Map />,
+        errorElement: <Error404 />,
+        children: [],
       },
     ],
   },

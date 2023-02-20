@@ -11,6 +11,7 @@ import {
   FaGithub,
   FaMinus,
   FaInfoCircle,
+  FaGlobeAmericas,
 } from "react-icons/fa";
 import ExternalLink from "@src/components/ExternalLink";
 import { useI18n } from "react-simple-i18n";
@@ -57,7 +58,7 @@ export const Navbar = () => {
   return (
     <nav>
       <Link
-        to="joyplot"
+        to="/joyplot"
         className={`navbar-title ${
           pathname.includes("joyplot") ? "active" : ""
         }`}
@@ -65,7 +66,7 @@ export const Navbar = () => {
         <span>{t("nav.joyplot")}</span> <FaMinus size={26} />
       </Link>
       <Link
-        to="circular_packing"
+        to="/circular_packing"
         className={`navbar-title ${
           pathname.includes("circular_packing") ? "active" : ""
         }`}
@@ -73,13 +74,22 @@ export const Navbar = () => {
         <span>{t("nav.circular_packing")}</span> <FaCircle size={26} />
       </Link>
       <Link
-        to="treemap"
+        to="/treemap"
         className={`navbar-title ${
           pathname.includes("treemap") ? "active" : ""
         }`}
       >
         <span>{t("nav.treemap")}</span>
         <FaSquare size={26} />
+      </Link>
+      <Link
+        to="/map"
+        className={`navbar-title ${
+          pathname.includes("map") ? "active" : ""
+        }`}
+      >
+        <span>{t("nav.map")}</span>
+        <FaGlobeAmericas size={26} />
       </Link>
       <RightSide />
       <LeftSide />
@@ -116,6 +126,9 @@ const Home: React.FC = () => {
     if (pathname.includes("/circular_packing")) {
       return [t("circular_packing.description")];
     }
+    if (pathname.includes("/map")) {
+      return [t("map.description")];
+    }
     if (pathname === "/") {
       return [
         t("home.sectionOne"),
@@ -123,6 +136,7 @@ const Home: React.FC = () => {
         t("home.sectionThree"),
         t("home.sectionFour"),
         t("home.sectionFive"),
+        t("home.sectionSix"),
       ];
     }
     return [""];
@@ -148,6 +162,11 @@ const Home: React.FC = () => {
             url="treemap"
             icon={<FaSquare size={50} />}
             title={t("nav.treemap")}
+          />
+          <Block
+            url="map"
+            icon={<FaGlobeAmericas size={50} />}
+            title={t("nav.map")}
           />
         </div>
       )}
