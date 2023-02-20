@@ -111,5 +111,3 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
     </group>
   );
 }
-
-useGLTF.preload("./moneyBox.glb");

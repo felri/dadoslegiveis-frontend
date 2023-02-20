@@ -2,7 +2,7 @@ export default {
   enUS: {
     home: {
       sectionOne:
-        "This project helps you understand how Brazilian deputies are spending public money. We have three charts that show the data in different ways.",
+        "This project helps you understand how Brazilian deputies are spending public money. We have four charts that show the data in different ways.",
       sectionTwo:
         "The LINE chart displays expenses over time.",
       sectionThree:
@@ -66,7 +66,7 @@ export default {
   ptBR: {
     home: {
       sectionOne:
-        "Este projeto ajuda você a entender como os deputados brasileiros estão gastando dinheiro público. Temos três gráficos que mostram os dados de diferentes maneiras.",
+        "Este projeto ajuda você a entender como os deputados brasileiros estão gastando dinheiro público. Temos quatro gráficos que mostram os dados de diferentes maneiras.",
       sectionTwo:
         "O gráfico de LINHA exibe as despesas ao longo do tempo",
       sectionThree:

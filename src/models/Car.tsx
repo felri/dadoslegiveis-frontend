@@ -37,5 +37,3 @@ export default function Model(): JSX.Element {
     </group>
   );
 }
-
-useGLTF.preload("./car.glb");

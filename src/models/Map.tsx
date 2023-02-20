@@ -187,5 +187,3 @@ function Model({ groupRef, data, handleClick }: Props): JSX.Element {
 }
 
 export default Model;
-
-useGLTF.preload("/map.glb");
