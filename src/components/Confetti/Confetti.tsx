@@ -8,6 +8,7 @@ export default () => {
     <Confetti
       width={width}
       height={height}
+      recycle={false}
     />
   )
 }
