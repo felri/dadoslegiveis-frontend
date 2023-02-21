@@ -1,14 +1,14 @@
 import * as THREE from "three";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-
+import flagJpg from "@src/assets/flag.jpg?url";
 interface Props {
   flagRef: React.RefObject<THREE.Mesh>;
 }
 
 export default function Flag({ flagRef }: Props): JSX.Element {
   const flagTexture = useRef(
-    new THREE.TextureLoader().load("./flag.jpg")
+    new THREE.TextureLoader().load(flagJpg)
   ).current;
 
   const waveFlag = (elapsedTime: number) => {

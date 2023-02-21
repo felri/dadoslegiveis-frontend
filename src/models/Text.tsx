@@ -2,6 +2,7 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { useMemo, useRef, useState } from "react";
 import { Center, Text3D } from "@react-three/drei";
 import { useSpring, animated } from "react-spring";
+import HelvicaFont from "@src/assets/helvetiker_regular.typeface.json?url";
 
 import * as THREE from "three";
 
@@ -21,7 +22,7 @@ export default function Text({ text, hovered, color, ...props }: Props): JSX.Ele
 
   const config = useMemo(
     () => ({
-      font: "./helvetiker_regular.typeface.json",
+      font: HelvicaFont,
     }),
     []
   );
