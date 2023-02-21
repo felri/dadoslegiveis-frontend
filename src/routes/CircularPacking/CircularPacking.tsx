@@ -43,7 +43,7 @@ const RangeInput = ({ updateBigBang, value } : { updateBigBang: (value: number) 
 const CircularPackingContainer = (): JSX.Element => {
   const navigate = useNavigate();
   const firstUpdate = useRef(true);
-  const [bigBang, setBigBang] = useState(36);
+  const [bigBang, setBigBang] = useState(50);
   const calendar = useSelector((state: RootState) => state.calendar);
 
   const { startDate, endDate } = calendar;
