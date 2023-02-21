@@ -48,8 +48,6 @@ const CanvasWrapper = ({ viewRef }: CanvasProps): JSX.Element => {
       {isMobile && <ButtonScrollTop viewRef={viewRef} />}
       <Suspense>
         <Canvas
-          // @ts-ignore
-          enablePan={false}
           shadows
           gl={{
             antialias: true,

@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSpring, a } from "@react-spring/three";
 import Text from "@src/models/Text";
 import { useI18n } from "react-simple-i18n";
-
+import moneyBoxGlb from "@src/assets/moneyBox.glb?url";
 interface Props {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
@@ -21,7 +21,7 @@ export default function Model({ isOpen, setIsOpen }: Props): JSX.Element {
   const bottomRef = useRef<any>(null);
   const [isHovered, setIsHovered] = useState(false);
   // @ts-ignore
-  const { nodes } = useGLTF("./moneyBox.glb");
+  const { nodes } = useGLTF(moneyBoxGlb);
 
   const handleBoxClick = () => {
     setIsOpen(!isOpen);

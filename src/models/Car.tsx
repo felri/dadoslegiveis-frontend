@@ -5,14 +5,16 @@ import * as THREE from "three";
 import { useAnimations, useGLTF, useTexture } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
+import carGlb from "@src/assets/car.glb?url";
+import carBaked from "@src/assets/car-baked.jpg?url";
 
 export default function Model(): JSX.Element {
   const meshRef = useRef<any>(null);
   // @ts-ignore
-  const { nodes, animations } = useGLTF("./car.glb");
+  const { nodes, animations } = useGLTF(carGlb);
   const { mixer, clips } = useAnimations(animations);
 
-  const bakedTexture = useTexture("./car-baked.jpg");
+  const bakedTexture = useTexture(carBaked);
   bakedTexture.flipY = false;
   bakedTexture.encoding = THREE.sRGBEncoding;
 

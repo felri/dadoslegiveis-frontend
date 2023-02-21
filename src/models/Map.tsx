@@ -7,6 +7,7 @@ import { a, useSpring } from "@react-spring/three";
 import { MapDataObject } from "@src/app/types";
 import Text from "@src/models/Text";
 import { debounce } from "@src/app/utils";
+import mapGlb from "@src/assets/map.glb?url";
 
 interface Props {
   groupRef: React.MutableRefObject<any>;
@@ -112,10 +113,10 @@ const State = ({
 };
 
 function Model({ groupRef, data, handleClick }: Props): JSX.Element {
+  // @ts-ignore
+  const { nodes } = useGLTF(mapGlb);
   const [hovered, setHovered] = useState(false);
 
-  // @ts-ignore
-  const { nodes } = useGLTF("/map.glb");
 
   const states = [
     ["AC", [0.4, 0, 1.86]],
