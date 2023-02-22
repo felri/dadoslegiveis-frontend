@@ -327,7 +327,7 @@ function AboutEnglish() {
 
       <div className="about-subtitle">Line Chart</div>
       <p className="about-paragraph">
-        The line chart is not a line simple chart. In fact, it's a joyplot
+        The line chart is not a simple chart. In fact, it's a joyplot
         chart, where each deputy's line or density chart is stacked on top of
         one another.
       </p>
