@@ -9,6 +9,7 @@ import { Navbar } from "@src/routes/Home/Home";
 import joyplotPic from "@src/assets/about/joyplot.jpg";
 import treemapPic from "@src/assets/about/treemap.jpg";
 import circularPic from "@src/assets/about/circular.jpg";
+import csvPic from "@src/assets/about/csv.jpg";
 import mapPic from "@src/assets/about/map.jpg";
 
 import "./styles.scss";
@@ -285,6 +286,9 @@ function AboutEnglish() {
       </p>
 
       <div className="about-subtitle">Dataset</div>
+      <div className="image-container">
+        <img src={csvPic} alt="dataset" />
+      </div>
       <p className="about-paragraph">
         After loading the CSV into a data frame, I explored it and chose the
         most relevant columns. I have the deputy's name, state, party, expenses
