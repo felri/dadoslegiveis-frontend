@@ -745,3 +745,11 @@ function AboutPortuguese() {
     </div>
   );
 }
+
+function About() {
+  const { i18n } = useI18n();
+  const isEnglish = i18n.getLang() === "enUS";
+  return isEnglish ? AboutEnglish() : AboutPortuguese();
+}
+
+export default About;
