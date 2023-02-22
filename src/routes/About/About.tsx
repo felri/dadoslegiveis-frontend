@@ -523,11 +523,6 @@ function AboutEnglish() {
         update my table every day with new csv entries. The following functions
         are used to achieve this:
       </p>
-      <p className="about-paragraph">
-        The last thing to do is to create some sort of cron job or task to
-        update my table every day with new csv entries. The following functions
-        are used to achieve this:
-      </p>
 
       <p className="about-paragraph">
         update_latest_entries_in_csv(): This function is called as a scheduled
