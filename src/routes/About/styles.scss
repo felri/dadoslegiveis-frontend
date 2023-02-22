@@ -4,7 +4,8 @@
 }
 
 .about {
-  max-width: 770px;
+  text-align: left;
+  max-width: 900px;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
@@ -12,12 +13,25 @@
   flex-direction: column;
 }
 
+.about img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
 .about-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-top: 40px;
 }
+
+.about-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
 
 pre { 
   text-align: left;
