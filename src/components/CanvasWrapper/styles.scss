@@ -3,6 +3,7 @@
   max-width: 800px;
   min-height: 512px;
   align-self: stretch;
+  margin-top: 200px;
 }
 
 .scroll-top-button {
@@ -41,4 +42,11 @@
 
 .show {
   visibility: inherit;
+}
+
+
+@media (max-width: 800px) {
+  .canvas-container {
+    margin-top: 0;
+  }
 }

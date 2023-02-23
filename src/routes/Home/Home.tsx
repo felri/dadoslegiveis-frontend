@@ -21,6 +21,8 @@ import Block from "@src/components/Block";
 import { Range } from "@src/app/types";
 import MobileWarning from "@src/components/MobileWarning";
 import CanvasWrapper from "@src/components/CanvasWrapper";
+import Background from "@src/models/Background";
+
 import "./App.scss";
 
 const LeftSide = () => {
@@ -187,6 +189,7 @@ const Home: React.FC = () => {
             handleChange={handleFetchJoyplot}
           />
         </div>
+        
         {pathname === "/" && <CanvasWrapper viewRef={viewRef} />}
       </div>
       <Outlet />

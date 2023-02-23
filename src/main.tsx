@@ -17,6 +17,7 @@ import { store } from "./app/store";
 import { Provider } from "react-redux";
 import "./index.css";
 import { createI18n, I18nProvider, useI18n } from "react-simple-i18n";
+import Background from "./models/Background";
 
 
 const router = createBrowserRouter([
@@ -80,6 +81,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
+      <Background />
       <I18nProvider i18n={createI18n(langData, { lang: "enUS" })}>
         <RouterProvider router={router} />
       </I18nProvider>

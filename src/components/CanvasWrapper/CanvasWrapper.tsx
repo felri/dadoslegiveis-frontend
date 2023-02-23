@@ -54,10 +54,10 @@ const CanvasWrapper = ({ viewRef }: CanvasProps): JSX.Element => {
             outputEncoding: THREE.sRGBEncoding,
           }}
           camera={{
-            fov: 55,
+            fov: 45,
             near: 0.1,
             far: 200,
-            position: [7, 10, 25],
+            position: [7, 12, 25],
           }}
         >
           <Experience viewRef={viewRef} />
