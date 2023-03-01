@@ -14,21 +14,27 @@ function JoyplotChart({ data, getDetails }: Props): JSX.Element {
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   const getOverlap = useCallback(() => {
-    const length = data.series.length;
-    if (length > 80) {
+    const lengthDeputies = data.series.length;
+    const lengthDates = data.dates.length;
+
+    if (lengthDates < 200) {
+      return 3;
+    }
+
+    if (lengthDeputies > 80) {
       return 8;
     }
-    if (length > 60) {
+    if (lengthDeputies > 60) {
       return 6;
     }
-    if (length > 40) {
+    if (lengthDeputies > 40) {
       return 4;
     }
-    if (length > 7) {
+    if (lengthDeputies > 7) {
       return 3;
     }
     return 2;
-  }, [data.series.length]);
+  }, [data.series.length, data.dates.length]);
 
   const getHeigth = useCallback((): number => {
     return 50 * data.series.length + 150;
@@ -260,12 +266,13 @@ function JoyplotChart({ data, getDetails }: Props): JSX.Element {
         let position = d3.pointer(d, window);
         let xInvert = xScale.invert(position[0]);
         let i = data.dates.findIndex((date) => compareDates(date, xInvert));
-
+        const value = d.target.__data__.values[i];
+        if(!value) return;
         if (i === -1) {
           i = data.dates.length - 1;
         }
 
-        let closestData = formatAsCurrency(d.target.__data__.values[i]);
+        let closestData = formatAsCurrency(value);
         let date = data.dates[i];
         // sum the values of the array
         tooltip

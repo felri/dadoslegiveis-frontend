@@ -37,7 +37,7 @@ function Backgroung(): JSX.Element {
   useFrame(({ clock }) => {
     if(!meshRef.current) return;
     // @ts-ignore
-    meshRef.current.material.uniforms.time.value = clock.elapsedTime;
+    meshRef.current.material.uniforms.u_time.value = clock.elapsedTime;
     // @ts-ignore
     meshRef.current.material.uniforms.mouse.value = mouse;
   });
@@ -56,7 +56,7 @@ function Backgroung(): JSX.Element {
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         uniforms={{
-          time: { value: 0 },
+          u_time: { value: 0 },
           mouse: { value: mouse },
           resolution: { value: resolution },
         }}
@@ -75,7 +75,7 @@ function CanvasWrapper() {
         position: "fixed",
         top: 0,
         left: 0,
-        zIndex: -1,
+        // zIndex: -1,
       }}
     >
       <Canvas>
